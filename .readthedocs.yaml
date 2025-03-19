@@ -7,7 +7,7 @@ build:
 
 python:
   install:
-    - requirements: docs/requirements.txt
+    - requirements: base-McFit/McFit/docs/requirements.txt
 
 sphinx:
-  configuration: docs/source/conf.py
+  configuration: base-McFit/McFit/docs/source/conf.py
