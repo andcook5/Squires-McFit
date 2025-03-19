@@ -10,6 +10,11 @@
 # add these directories to sys.path here.
 import sys
 from pathlib import Path
+import mock
+ 
+MOCK_MODULES = ['numpy',  'matplotlib', 'matplotlib.pyplot', 'numpy.random']
+for mod_name in MOCK_MODULES:
+    sys.modules[mod_name] = mock.Mock()
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 project = 'McFit'
 copyright = '2025, Andrés Cook'
@@ -26,13 +31,6 @@ extensions = ['sphinx.ext.autodoc',
 templates_path = ['_templates']
 exclude_patterns = []
 
-# Courtesy of https://stackoverflow.com/questions/17927741/exclude-module-docstring-in-autodoc
-def remove_module_docstring(app, what, name, obj, options, lines):
-    if what == "module" and name == "McFit":
-        del lines[:]
-
-def setup(app):
-    app.connect("autodoc-process-docstring", remove_module_docstring)
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output

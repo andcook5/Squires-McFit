@@ -8,6 +8,10 @@ build:
 python:
   install:
     - requirements: base-McFit/McFit/docs/requirements.txt
+    - extra_requirements:
+      - progress.bar
+      - corner
+
 
 sphinx:
   configuration: base-McFit/McFit/docs/source/conf.py
