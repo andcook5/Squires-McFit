@@ -7,11 +7,9 @@ build:
 
 python:
   install:
-    
-    - requirements: base-McFit/McFit/docs/requirements.txt
       path: .
-      extra_requirements:
-      
+    - requirements: 
+      - base-McFit/McFit/docs/requirements.txt
       - progress.bar
       - corner
 
