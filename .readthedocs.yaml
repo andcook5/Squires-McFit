@@ -7,7 +7,6 @@ build:
 
 python:
   install:
-      path: .
     - requirements: 
       - base-McFit/McFit/docs/requirements.txt
       - progress.bar
